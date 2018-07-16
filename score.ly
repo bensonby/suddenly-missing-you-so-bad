@@ -60,13 +60,13 @@ melody-verse-one = \relative c' {
     r2 r4 r8 ees\(
     c'4 c8 aes bes aes g4
     aes\) r r r8 aes\(
-    des4 des8 c des c des4
+    des4 des8 c des c~ c des
     ees8 bes\) r4 r8 aes\( g aes
     f'4 f8 g bes aes~
   }
-  \tuplet 3/2 { aes8 g f } ees4 \tuplet 3/2 { ees8 f4 }
+  \tuplet 3/2 { aes8 g f } ees4
   \tripletFeel 8 {
-    c8\) aes\( g aes ees4 r8 ees ees des f,4 g8 aes\) r4 r4 r8
+    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4 r8
   }
 }
 
@@ -89,7 +89,7 @@ melody = \relative c' {
   \phrasingSlurUp
 	\key aes \major
 	\time 4/4
-  \tempo 4 = 60
+  \tempo 4 = 72
   \melody-intro
   \melody-verse-one
   \melody-bridge-one
@@ -113,7 +113,7 @@ upper-verse-one = \relative c' {
   \tripletFeel 8 {
     r8 g <c ees>4 <d f>8 <cis e>4.
     <c? ees?>8 g <bes ees>4 <d aes'>4 <des g>
-    <aes f'>4
+    <aes f'>2 <f des' ees>
   }
 }
 
@@ -121,9 +121,9 @@ upper-verse-one-b = \relative c'' {
 }
 
 lower-verse-one = \relative c {
-  aes2 g4 fis
-  f2 e4 ees8 a,
-  bes2 a aes g4 c
+  aes2 \tripletFeel 8 { g8 fis~ } fis4
+  f2 e4 ees
+  bes'2 a aes g2
 }
 
 lower-verse-one-b = \relative c' {
@@ -167,7 +167,7 @@ lower-outro = \relative c {
 
 upper = \relative c' {
   \clef treble
-  \tempo 4 = 60
+  \tempo 4 = 72
   \time 4/4
   \key aes \major
   \upper-intro
