@@ -66,22 +66,127 @@ melody-verse-one = \relative c' {
   }
   \tuplet 3/2 { aes8 g f } ees4
   \tripletFeel 8 {
-    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4 r8
+    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
   }
 }
 
-melody-bridge-two = \relative c' {
+melody-verse-two = \relative c' {
+  \tripletFeel 8 {
+    r8 ees8\(
+    c'4 c8 aes bes aes g4
+    aes\) r r r8 aes\(
+    des4 des8 c des c~ c des
+    ees8 bes\) r4 r8 aes\( g aes
+    f'4 f8 g bes aes g f ees4
+  }
+  \tuplet 3/2 { ees8 f4 }
+  \tripletFeel 8 {
+    c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
+  }
 }
 
-melody-bridge-one = \relative c' {
+melody-verse-three = \relative c' {
+  \tripletFeel 8 {
+    r8 ees8\(
+    c'8 c c aes
+  }
+  \tuplet 3/2 4 { bes8 c des }
+  \tripletFeel 8 {
+    c4 g8 aes\) r4 r r8 aes\(
+    des4 des8 c des c~ c des
+    ees8 bes\) r4 r8 aes\( g aes
+    f'4 f8 g bes aes~
+  }
+  \tuplet 3/2 { aes8 g f }
+  \tripletFeel 8 {
+    ees8 ees f c8\) r aes\( g aes ees'4 r8 ees ees des
+  }
+  \tuplet 3/2 4 { r8 c' c bes( aes4)\) }
+  r4 r4
+}
+
+melody-verse-four = \relative c' {
+  \tripletFeel 8 {
+    r8 ees8\(
+    c'4 c8 aes bes aes g4
+    aes\) r r r8 aes\(
+    des4 des8 c des c~ c des
+    ees8 bes\) r4 r8 aes\( g aes
+    f'4 f8 g bes aes~
+  }
+  \tuplet 3/2 { aes8 g f } ees4
+  \tripletFeel 8 {
+    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4
+  }
+
+  \tripletFeel 8 {
+    r8 aes\( g aes
+    f'4 f8 g bes aes~
+  }
+  \tuplet 3/2 { aes8 g f } ees4
+  \tripletFeel 8 {
+    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
+  }
+}
+melody-bridge = \relative c''' {
+  r2 aes4 bes
+  \tuplet 3/2 4 {
+    r8 c c c aes aes aes f f f4 c'8
+    r8 bes bes bes bes bes
+    bes4 des8 c4 g8
+  }
+  aes4
+  \tuplet 3/2 4 {
+    f8 f g
+  }
+  \tripletFeel 8 {
+    aes f g aes c bes
+  }
+  \tuplet 3/2 4 { bes8 aes c~ }
+  \tripletFeel 8 {
+    c bes bes aes c bes bes aes bes4
+  }
 }
 
 melody-chorus-one = \relative c'' {
+  \tripletFeel 8 {
+    f8 g aes4 c8 bes r4
+    aes8 bes ees,4 bes'8 aes r4
+    f8 g aes4 c bes4. aes8 c4 r r
+    f,8 g aes4 c8 bes r4
+    ees8 bes des c~
+  }
+  \tuplet 3/2 4 { c8 bes c bes( aes) r }
+  \tripletFeel 8 {
+    f8 g aes4 c bes4. aes8 aes4 r r
+  }
 }
-
-melody-episode = \relative c' {
+melody-chorus-two = \relative c'' {
+  \tripletFeel 8 {
+    f8 g aes4 c8 bes r4
+    aes8 bes ees,4 bes'8 aes r4
+    f8 g aes4 c bes4. aes8 c4 r r
+    f,8 g aes4 c8 bes r4
+    ees8 bes des c~
+  }
+  \tuplet 3/2 4 { c8 bes c bes( aes) r }
+  \tripletFeel 8 {
+    f8 g aes4 c bes4. aes8 aes4 r r r
+  }
 }
-
+melody-chorus-three = \relative c'' {
+  \tripletFeel 8 {
+    f8 g aes4 c8 bes r4
+    aes8 bes ees,4 bes'8 aes r4
+    f8 g aes4 c bes4. aes8 c4 r r
+    f,8 g aes4 c8 bes r4
+    ees8 bes des c~
+  }
+  \tuplet 3/2 4 { c8 bes c bes( aes) r }
+  \tripletFeel 8 {
+    f8 g aes4 c bes4. aes8 aes4 r r
+  }
+}
 melody-outro = \relative c {
 }
 
@@ -92,11 +197,13 @@ melody = \relative c' {
   \tempo 4 = 72
   \melody-intro
   \melody-verse-one
-  \melody-bridge-one
+  \melody-verse-two
   \melody-chorus-one
-  \melody-episode
-  \melody-bridge-two
-  \melody-chorus-one
+  \melody-verse-three
+  \melody-chorus-two
+  \melody-bridge
+  \melody-chorus-three
+  \melody-verse-four
   \melody-outro
   % \bar "|."
 }
@@ -211,6 +318,47 @@ lyricsmain = \lyricmode {
   最 怕 朋 友 突 然 的 關 心
   最 怕 回 憶 突 然 翻 滾 絞 痛 著 不 平 息
   最 怕 突 然 聽 到 你 的 消 息
+  想 念 如 果 會 有 聲 音
+  不 願 那 是 悲 傷 的 哭 泣
+  事 到 如 今 終 於 讓 自 己 屬 於 我 自 己
+  只 剩 眼 淚 還 騙 不 過 自 己
+
+  突 然 好 想 你
+  你 會 在 哪 裡 過 得 快 樂 或 委 屈
+  突 然 好 想 你
+  突 然 鋒 利 的 回 憶
+  突 然 模 糊 的 眼 睛
+
+  我 們 像 一 首 最 美 麗 的 歌 曲
+  變 成 兩 部 悲 傷 的 電 影
+  為 什 麼 你 帶 我 走 過 最 難 忘 的 旅 行
+  然 後 留 下 最 痛 的 紀 念 品
+
+  突 然 好 想 你
+  你 會 在 哪 裡 過 得 快 樂 或 委 屈
+  突 然 好 想 你
+  突 然 鋒 利 的 回 憶
+  突 然 模 糊 的 眼 睛
+
+  我 們 那 麼 甜 那 麼 美 那 麼 相 信
+  那 麼 瘋 那 麼 熱 烈 的 曾 經
+  為 何 我 們 還 是 要 奔 向
+  各 自 的 幸 福 和 遺 憾 中 老 去
+
+  突 然 好 想 你
+  你 會 在 哪 裡 過 得 快 樂 或 委 屈
+
+  突 然 好 想 你
+  突 然 鋒 利 的 回 憶
+  突 然 模 糊 的 眼 睛
+
+  最 怕 空 氣 突 然 安 靜
+  最 怕 朋 友 突 然 的 關 心
+  最 怕 回 憶 突 然 翻 滾 絞 痛 著 不 平 息
+  最 怕 突 然 聽 到 你 的 消 息
+
+  最 怕 此 生 已 經 決 心 自 己 過 沒 有 你
+  卻 又 突 然 聽 到 你 的 消 息
 }
 
 \paper {
