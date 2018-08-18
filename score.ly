@@ -222,18 +222,45 @@ upper-verse-one = \relative c' {
     <c? ees?>8 g <bes ees>4 <d aes'>4 <des g>
     <aes f'>2 <f des' ees>
   }
+  \tuplet 3/2 4 { r8 des' ees f aes ces } <bes fes des>4 <aes ges>
+  <f c>4 \tuplet 3/2 4 { aes8 g ees } <fes ces>4~ <g fes ces>
+  <ees bes>4 \tuplet 3/2 4 { c'8 bes aes } <a ees>2
+  \tuplet 3/2 4 { ees'8 des c bes aes f } <aes fes>2
+  <ees' aes,>4 <des a> <c bes fes> <bes aes>
 }
 
-upper-verse-one-b = \relative c'' {
+upper-verse-one-b = \relative c' {
+  \tripletFeel 8 {
+    r8 g <c ees>4 <d f>8 <cis e>4.
+    <d ees?>8 f <c' ees,>8 b16 bes <d, aes'>4 <des g>
+    <aes f'>2 <f des' ees>
+  }
+  \tuplet 3/2 4 { r8 f' c' des ees f } <bes, fes des>4 <aes ges>
+  <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <g fes ces>
+  <ees bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees>2
+  \tuplet 3/2 4 { r8 g a bes c des } <des aes fes>4 <c g ees>
+  \tripletFeel 8 {
+    r8 ees 
+  }
+  \tuplet 3/2 4 { <g c,>8 ees c }
+  << { \tuplet 3/2 4 { des8 ees f } } \\ { fes,4 } >>
+  <ees a c>4
 }
 
 lower-verse-one = \relative c {
   aes2 \tripletFeel 8 { g8 fis~ } fis4
   f2 e4 ees
-  bes'2 a aes g2
+  bes'2 a aes g4 d'
+  des?2 des c f,
+  bes2 ees, f4 f ges g
 }
 
-lower-verse-one-b = \relative c' {
+lower-verse-one-b = \relative c {
+  aes2 \tripletFeel 8 { g8 fis~ } fis4
+  f2 e4 ees
+  bes'2 a aes g4 d'
+  des?2 des c f,
+  bes2 ees, aes2 ges4 c
 }
 
 upper-bridge-one = \relative c''' {
@@ -242,10 +269,28 @@ upper-bridge-one = \relative c''' {
 lower-bridge-one = \relative c {
 }
 
-upper-chorus-one = \relative c' {
+upper-chorus-one = \relative c'' {
+  << {
+    \tuplet 3/2 4 {
+      \repeat unfold 4 { c8 bes c }
+      \repeat unfold 4 { bes8 aes bes }
+      \repeat unfold 3 { aes8 g aes } ces8 bes aes
+      aes8 g aes aes g aes
+    }
+  } \\ {
+    f2 fes ees ees des d c
+  } >>
+  \tuplet 3/2 4 { aes'8 bes c des ges e }
 }
 
-lower-chorus-one = \relative c' {
+lower-chorus-one = \relative c {
+  des4 \tuplet 3/2 4 { aes'8 c f }
+  des,4 \tuplet 3/2 4 { aes'8 bes fes' }
+  c,4 \tuplet 3/2 4 { aes'8 bes ees
+  ces, ees ges ces des ees }
+  bes,4 \tuplet 3/2 4 { des'8 aes f }
+  e4 ges,
+  aes1
 }
 
 upper-episode = \relative c''' {
@@ -280,9 +325,9 @@ upper = \relative c' {
   \upper-intro
   \upper-verse-one
   \upper-verse-one-b
-  \upper-bridge-one
   \upper-chorus-one
   \upper-episode
+  \upper-bridge-one
   \upper-bridge-two
   \upper-chorus-two
   \upper-outro
@@ -296,9 +341,9 @@ lower = \relative c {
   \lower-intro
   \lower-verse-one
   \lower-verse-one-b
-  \lower-bridge-one
   \lower-chorus-one
   \lower-episode
+  \lower-bridge-one
   \lower-bridge-two
   \lower-chorus-two
   \lower-outro
