@@ -123,9 +123,9 @@ melody-verse-four = \relative c' {
     r8 aes\( g aes
     f'4 f8 g bes aes~
   }
-  \tuplet 3/2 { aes8 g f } ees4
+  \tuplet 3/2 { aes8 g f } ees4 \tuplet 3/2 4 { ees8 f c\) }
   \tripletFeel 8 {
-    ees8 f c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
+     r8 aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
   }
 }
 melody-bridge = \relative c''' {
@@ -158,8 +158,9 @@ melody-chorus-one = \relative c'' {
   }
   \tuplet 3/2 4 { c8 bes c bes( aes) r }
   \tripletFeel 8 {
-    f8 g aes4 c bes4. aes8 aes4 r r
+    f8 g aes4 c bes4 aes8 aes
   }
+  r2 r4
 }
 melody-chorus-two = \relative c'' {
   \tripletFeel 8 {
@@ -171,8 +172,9 @@ melody-chorus-two = \relative c'' {
   }
   \tuplet 3/2 4 { c8 bes c bes( aes) r }
   \tripletFeel 8 {
-    f8 g aes4 c bes4. aes8 aes4 r r r
+    f8 g aes4 c bes4 aes8 aes
   }
+  r1
 }
 melody-chorus-three = \relative c'' {
   \tripletFeel 8 {
@@ -184,8 +186,9 @@ melody-chorus-three = \relative c'' {
   }
   \tuplet 3/2 4 { c8 bes c bes( aes) r }
   \tripletFeel 8 {
-    f8 g aes4 c bes4. aes8 aes4 r r
+    f8 g aes4 c bes4 aes8 aes
   }
+  r2 r4
 }
 melody-outro = \relative c {
 }
@@ -226,7 +229,8 @@ upper-verse-one = \relative c' {
   <f c>4 \tuplet 3/2 4 { aes8 g ees } <fes ces>4~ <g fes ces>
   <ees bes>4 \tuplet 3/2 4 { c'8 bes aes } <a ees>2
   \tuplet 3/2 4 { ees'8 des c bes aes f } <aes fes>2
-  <ees' aes,>4 <des a> <c bes fes> <bes aes>
+  \tuplet 3/2 4 { aes8 bes c des bes ges }
+  \tripletFeel 8 { <bes c>8 fes } <aes bes>4
 }
 
 upper-verse-one-b = \relative c' {
@@ -238,7 +242,7 @@ upper-verse-one-b = \relative c' {
   \tuplet 3/2 4 { r8 f' c' des ees f } <bes, fes des>4 <aes ges>
   <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <g fes ces>
   <ees bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees>2
-  \tuplet 3/2 4 { r8 g a bes c des } <des aes fes>4 <c g ees>
+  \tuplet 3/2 4 { r8 g aes bes c des } <des aes fes>4 <c g ees>
   \tripletFeel 8 {
     r8 ees 
   }
@@ -252,7 +256,7 @@ lower-verse-one = \relative c {
   f2 e4 ees
   bes'2 a aes g4 d'
   des?2 des c f,
-  bes2 ees, f4 f ges g
+  bes2 ees, aes2 d,4 ees
 }
 
 lower-verse-one-b = \relative c {
@@ -279,7 +283,7 @@ upper-chorus-one = \relative c'' {
     \tuplet 3/2 4 {
       \repeat unfold 4 { f8 g f }
       \stemNeutral
-      ees8 f ees des ees des c d c c d c
+      ees8 f ees des ees des c des c c des c
     }
     \stemUp
     r4 \ottava #1
@@ -322,15 +326,15 @@ lower-chorus-two = \lower-chorus-one
 upper-bridge = \relative c'' {
   r2 <c d ges aes>4 <ees ges bes>
   \tuplet 3/2 4 { r8 c des f4 a8 aes4 c,8 f e ees }
-  \tuplet 3/2 4 { r8 c des f4 a8 f des bes } <c aes e>4
+  \tuplet 3/2 4 { r8 c des f4 a8 f des ces } <c aes e>4
   << { \tuplet 3/2 4 { r4 e'8 c4 aes8 } } \\ { <aes, f c>2 } >>
   \tuplet 3/2 4 { \acciaccatura g'16 <bes des>4 f8 des4 ces8 }
   \tuplet 3/2 4 {
-    <fes bes,>4 fes,8
+    <f bes,>4 fes,8
     <ees' ces>4 f,8
-    <fes' bes,>4 ges,8
+    <f' bes,>4 ges,8
     <ees' ces>4 g,8
-    <fes' bes,>4 aes,8
+    <f' bes,>4 aes,8
     <ees' ces>4 beses8
   }
   <fes' bes,>4 r
