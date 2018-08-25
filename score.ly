@@ -88,7 +88,7 @@ melody-verse-two = \relative c' {
 melody-verse-three = \relative c' {
   \tripletFeel 8 {
     r8 ees8\(
-    c'8 c c aes
+    c'8 b c aes
   }
   \tuplet 3/2 4 { bes8 c des }
   \tripletFeel 8 {
@@ -131,8 +131,8 @@ melody-verse-four = \relative c' {
 melody-bridge = \relative c''' {
   r2 aes4 bes
   \tuplet 3/2 4 {
-    r8 c c c aes aes aes f f f4 c'8
-    r8 bes bes bes bes bes
+    r4 c16 c c8 r aes16 aes aes8 r f16 f f4 c'8
+    r4 bes16 bes bes8 r bes16 bes
     bes4 des8 c4 g8
   }
   aes4
