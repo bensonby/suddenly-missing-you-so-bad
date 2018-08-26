@@ -222,7 +222,7 @@ lower-intro = \relative c' {
 upper-verse-one = \relative c' {
   \tripletFeel 8 {
     r8 g <c ees>4 <d f>8 <cis e>4.
-    <c? ees?>8 g <bes ees>4 <d aes'>4 <des g>
+    <c? ees?>8 g <bes ees>4 <d aes'>4 <des ges>
     <aes f'>2 <f des' ees>
   }
   \tuplet 3/2 4 { r8 des' ees f aes ces } <bes fes des>4 <aes ges>
@@ -236,13 +236,13 @@ upper-verse-one = \relative c' {
 upper-verse-one-b = \relative c' {
   \tripletFeel 8 {
     r8 g <c ees>4 <d f>8 <cis e>4.
-    <d ees?>8 f <c' ees,>8 b16 bes <d, aes'>4 <des g>
+    <d ees?>8 f <c' ees,>8 b16 bes <d, aes'>4 <des ges>
     <aes f'>2 <f des' ees>
   }
   \tuplet 3/2 4 { r8 f' c' des ees f } <bes, fes des>4 <aes ges>
   <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <g fes ces>
   <ees bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees>2
-  \tuplet 3/2 4 { r8 g aes bes c des } <des aes fes>4 <c g ees>
+  \tuplet 3/2 4 { r8 g aes bes c des~ } <des aes fes>4 <c g ees>
   \tripletFeel 8 {
     r8 ees 
   }
@@ -283,11 +283,11 @@ upper-chorus-one = \relative c'' {
     \tuplet 3/2 4 {
       \repeat unfold 4 { f8 g f }
       \stemNeutral
-      ees8 f ees des ees des c des c c des c
+      ees8 f ees des ees des c des c b c des
     }
     \stemUp
     r4 \ottava #1
-    \tuplet 3/2 4 { ges''8 bes des }
+    \tuplet 3/2 4 { ges'8 bes des }
     \ottava #0
     r4 \ottava #1
     \tuplet 3/2 4 { b8 g ees }
@@ -306,8 +306,11 @@ lower-chorus-one = \relative c {
   bes,4 \tuplet 3/2 4 { des'8 aes f }
   e4 ges,
   aes4 \tuplet 3/2 4 { d8 ees aes } ges2
-  \set fingeringOrientations = #'(left)
-  << { r4 \tuplet 3/2 4 { aes8 c <f \finger \rhMark> } fes2 } \\ { des,1 } >>
+  << {
+    r4 \tuplet 3/2 4 { aes8 c
+    \set fingeringOrientations = #'(left)
+    <f \finger \rhMark> } fes2
+  } \\ { des,1 } >>
   \clef treble \tuplet 3/2 4 { g8 f' bes fis, e' aes f,4 ees'8 } aes4
   \clef bass
   <e, d'>2 <ees des'>
@@ -361,10 +364,15 @@ upper-verse-three = \upper-verse-one-b
 upper-verse-four = \upper-verse-one-b
 lower-verse-three = \lower-verse-one-b
 lower-verse-four = \lower-verse-one-b
-upper-outro = \relative c''' {
+upper-outro = \relative c' {
+  <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <g fes ces>
+  <ees bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees' aes>2
+  \tuplet 3/2 4 { r8 g aes bes c des~ } <des aes fes>4 <c g ees>
 }
 
 lower-outro = \relative c {
+  des2 des c f,,
+  bes2 ees aes1
 }
 
 upper = \relative c' {
