@@ -53,6 +53,7 @@ rhMark = \markup {
 }
 
 melody-intro = \relative c {
+  R1
 }
 
 melody-verse-one = \relative c' {
@@ -129,6 +130,7 @@ melody-verse-four = \relative c' {
   }
 }
 melody-bridge = \relative c''' {
+  R1*6
   r2 aes4 bes
   \tuplet 3/2 4 {
     r4 c16 c c8 r aes16 aes aes8 r f16 f f4 c'8
@@ -212,11 +214,23 @@ melody = \relative c' {
 }
 
 upper-intro = \relative c''' {
-  R1
+  << { 
+    \tuplet 3/2 4 { r4 g8~ } g4
+    \tuplet 3/2 4 { r4 f8~ f4 e8 }
+    ees2 c4 bes
+  } \\ {
+    aes2 aes beses4 \tuplet 3/2 4 { f4 g8 } f4 g
+  } >>
 }
 
-lower-intro = \relative c' {
-  R1
+lower-intro = \relative c'' {
+  << {
+    r4 \clef treble bes \clef bass
+    r4 \clef treble beses \clef bass
+  } \\ {
+    c,,2 des
+  } >>
+  <ces' f>2 <ees, des'>
 }
 
 upper-verse-one = \relative c' {
@@ -295,6 +309,8 @@ upper-chorus-one = \relative c'' {
   } \\ {
     c,2 ces s1 c2 c
   } >>
+}
+upper-chorus-one-end = {
   s1
 }
 
@@ -305,7 +321,7 @@ lower-chorus-one = \relative c {
   ces, ees ges ces des ees }
   bes,4 \tuplet 3/2 4 { des'8 aes f }
   e4 ges,
-  aes4 \tuplet 3/2 4 { d8 ees aes } ges2
+  \tuplet 3/2 4 { aes4 d8 ees4 aes8 } ges2
   << {
     r4 \tuplet 3/2 4 { aes8 c
     \set fingeringOrientations = #'(left)
@@ -314,40 +330,87 @@ lower-chorus-one = \relative c {
   \clef treble \tuplet 3/2 4 { g8 f' bes fis, e' aes f,4 ees'8 } aes4
   \clef bass
   <e, d'>2 <ees des'>
+}
+lower-chorus-one-end = \relative c' {
   \stemDown 
-  \tuplet 3/2 4 { aes8 ees' \cr g \stemNeutral aes bes c } aes'2 \cl
+  \tuplet 3/2 4 { aes8 ees' \cr g \stemNeutral aes bes c } aes'2^"L.H." \cl
 }
 
-upper-chorus-two = \relative c' {
-}
 upper-chorus-two = \upper-chorus-one
-
-lower-chorus-two = \relative c' {
-}
 lower-chorus-two = \lower-chorus-one
 
+upper-episode = \relative c'' {
+  \tuplet 3/2 4 {
+    \makeOctaves 1 { cisis8 dis cisis dis eis fis }
+    <fis a fis'>4 <a a'>8~ q4 <gis gis'>8
+  }
+  <e gis e'>4 \tuplet 3/2 4 { <ees g a ees'>4 <d fis gis d'>8~ } q2
+  \tuplet 3/2 4 { <ces ees>4 bes'8 ees f ges <g, c g'>4 bes'8 d,4 des8~ } <c, f des'>1
+  \tuplet 3/2 4 {
+    \makeOctaves 1 { f8 ges f ges aes bes }
+  }
+  <a cis a'>4~ \tuplet 3/2 4 { q8 \acciaccatura bis16 cis8 c }
+  \tuplet 3/2 4 {
+    <e, b'>4 c8 <cis e cis'>4 <cis ais'>8
+    r8 \makeOctaves 1 { a8 bes c des ees }
+    <e a e'>4 d8 a'4 b8 \acciaccatura cis,16 <d g>4 d8 b4 g'8
+  }
+  <f bes,?>4 <g bes,> <aes ges d> <bes ees, a,>
+}
+
+lower-episode = \relative c {
+  \tuplet 3/2 4 {
+    b8 fis' a dis a dis
+    d, cis' fis
+  } a4
+  << {
+    s2 \tuplet 3/2 4 { r8 cis, d ees f fis }
+  } \\ {
+    \tuplet 3/2 4 {
+      \stemNeutral
+      cis,8 b' e <c, c'>4 <b b'>8~
+    }
+    \stemDown
+    q2
+  } >>
+  << {
+    ces'2 a
+    r4 \stemNeutral \tuplet 3/2 4 { bes8 c \cr f } <b, e g>4( <f' aes>)
+    \cl
+  } \\ {
+    bes,,1
+    des2. \stemNeutral d,4
+  } >>
+
+  \tuplet 3/2 4 {
+    ees4 bes'8 f'4 c'8 a,8 e' b'
+  } gis'4
+  << { r4 \tuplet 3/2 4 { ais,8 cis g' } } \\ { fis,,2 } >>
+  fis'2
+  f?2 e
+  ees4 des c ces
+}
+
 upper-bridge = \relative c'' {
-  r2 <c d ges aes>4 <ees ges bes>
   \tuplet 3/2 4 { r8 c des f4 a8 aes4 c,8 f e ees }
   \tuplet 3/2 4 { r8 c des f4 a8 f des ces } <c aes e>4
   << { \tuplet 3/2 4 { r4 e'8 c4 aes8 } } \\ { <aes, f c>2 } >>
   \tuplet 3/2 4 { \acciaccatura g'16 <bes des>4 f8 des4 ces8 }
   \tuplet 3/2 4 {
-    <f bes,>4 fes,8
-    <ees' ces>4 f,8
-    <f' bes,>4 ges,8
-    <ees' ces>4 g,8
-    <f' bes,>4 aes,8
-    <ees' ces>4 beses8
+    <f bes,>8 ees des
+    eeses, des ces
+    f'8 ees des
+    eeses, des ces
+    f'8 ees des
+    eeses, des ces
   }
-  <fes' bes,>4 r
+  <f' bes,>4 r
 }
 
-lower-bridge = \relative c {
-  r2 c4 ces
+lower-bridge = \relative c'' {
   \clef treble
   << {
-    \tuplet 3/2 4 { r4 a''8~ } a4
+    \tuplet 3/2 4 { r4 a8~ } a4
     \tuplet 3/2 4 { r4 g8~ } g4
     r4
     \tuplet 3/2 4 { f4 des8 }
@@ -355,11 +418,13 @@ lower-bridge = \relative c {
     bes2 a aes
   } >>
   g4 \clef bass << { bes4 } \\ { \tuplet 3/2 4 { c,4 c,8 } } >>
-  des2 d ees1~ ees2. r4
+  des2 d ees2 ees ees <ees' des'>4 r4
 }
 
 upper-chorus-three = \upper-chorus-one
+upper-chorus-three-end = \upper-chorus-one-end
 lower-chorus-three = \lower-chorus-one
+lower-chorus-three-end = \lower-chorus-one-end
 upper-verse-three = \upper-verse-one-b
 upper-verse-four = \upper-verse-one-b
 lower-verse-three = \lower-verse-one-b
@@ -384,10 +449,13 @@ upper = \relative c' {
   \upper-verse-one
   \upper-verse-one-b
   \upper-chorus-one
+  \upper-chorus-one-end
   \upper-verse-three
   \upper-chorus-two
+  \upper-episode
   \upper-bridge
   \upper-chorus-three
+  \upper-chorus-three-end
   \upper-verse-four
   \upper-outro
   % \bar "|."
@@ -401,10 +469,13 @@ lower = \relative c {
   \lower-verse-one
   \lower-verse-one-b
   \lower-chorus-one
+  \lower-chorus-one-end
   \lower-verse-three
   \lower-chorus-two
+  \lower-episode
   \lower-bridge
   \lower-chorus-three
+  \lower-chorus-three-end
   \lower-verse-four
   \lower-outro
   % \bar "|."
