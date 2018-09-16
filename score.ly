@@ -219,18 +219,23 @@ upper-intro = \relative c''' {
     \tuplet 3/2 4 { r4 f8~ f4 e8 }
     ees2 c4 bes
   } \\ {
-    aes2 aes beses4 \tuplet 3/2 4 { f4 g8 } f4 g
+    aes2 aes aes4 \tuplet 3/2 4 { fis4 g8 } aes4 g
   } >>
 }
 
-lower-intro = \relative c'' {
+lower-intro = \relative c' {
   << {
-    r4 \clef treble bes \clef bass
-    r4 \clef treble beses \clef bass
+    \override Glissando.style = #'dashed-line
+    \hideNotes d4\glissando \unHideNotes \cr \stemDown bes'\glissando \cl \stemUp
+    \hideNotes d,4\glissando \unHideNotes \cr \stemDown beses'\glissando \cl
+    \hideNotes f4
   } \\ {
-    c,,2 des
+    \stemDown
+    c,2 des
+    <bes' f'>2 <ees, des'>
+  } \\ {
+    c'4\rest s4 c4\rest
   } >>
-  <ces' f>2 <ees, des'>
 }
 
 upper-verse-one = \relative c' {
