@@ -45,6 +45,7 @@ cl = \change Staff = "left"
 rhMark = \markup { 
   \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
 }
+rit = \markup { \bold \italic "rit." }
 
 \header {
   title = "徐佳瑩 - 突然好想你"
@@ -78,10 +79,7 @@ melody-verse-two = \relative c' {
     aes\) r r r8 aes\(
     des4 des8 c des c~ c des
     ees8 bes\) r4 r8 aes\( g aes
-    f'4 f8 g bes aes g f ees4
-  }
-  \tuplet 3/2 { ees8 f4 }
-  \tripletFeel 8 {
+    f'4 f8 g bes aes g f ees4 ees8 f
     c8\) aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
   }
 }
@@ -126,7 +124,7 @@ melody-verse-four = \relative c' {
   }
   \tuplet 3/2 { aes8 g f } ees4 \tuplet 3/2 4 { ees8 f c\) }
   \tripletFeel 8 {
-     r8 aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r4
+     r8 aes\( g aes ees'4 r8 ees ees des f,4 g8 aes\) r4 r2
   }
 }
 melody-bridge = \relative c''' {
@@ -210,7 +208,7 @@ melody = \relative c' {
   \melody-chorus-three
   \melody-verse-four
   \melody-outro
-  % \bar "|."
+  \bar "|."
 }
 
 upper-intro = \relative c''' {
@@ -350,17 +348,21 @@ upper-episode = \relative c'' {
     <fis a fis'>4 <a a'>8~ q4 <gis gis'>8
   }
   <e gis e'>4 \tuplet 3/2 4 { <ees g a ees'>4 <d fis gis d'>8~ } q2
-  \tuplet 3/2 4 { <ces ees>4 bes'8 ees f ges <g, c g'>4 bes'8 d,4 des8~ } <c, f des'>1
+  \tuplet 3/2 4 { aes4 bes8 c ees f } <g c, g>4 \tuplet 3/2 4 { bes4 d,8 } <c f, c>1
+  % \tuplet 3/2 4 { <ces ees>4 bes'8 ees f ges <g, c g'>4 bes'8 d,4 des8~ } <c, f des'>1
   \tuplet 3/2 4 {
     \makeOctaves 1 { f8 ges f ges aes bes }
   }
-  <a cis a'>4~ \tuplet 3/2 4 { q8 \acciaccatura bis16 cis8 c }
+  <a cis a'>4~ \tuplet 3/2 4 { q4 e8~ }
   \tuplet 3/2 4 {
-    <e, b'>4 c8 <cis e cis'>4 <cis ais'>8
+    <e b'>4 cis8~ <cis e cis'>4 <cis ais'>8
     r8 \makeOctaves 1 { a8 bes c des ees }
-    <e a e'>4 d8 a'4 b8 \acciaccatura cis,16 <d g>4 d8 b4 g'8
+    <e a e'>4 d8 a'4 b8
+  } \acciaccatura cis,16 <d g>4
+  \tuplet 3/2 4 {
+    b8 c g'
+    <f bes,?>8 f, c' <g' bes,> g, c <aes' d,> ges, c <bes' ees,> ges, c
   }
-  <f bes,?>4 <g bes,> <aes ges d> <bes ees, a,>
 }
 
 lower-episode = \relative c {
@@ -380,7 +382,7 @@ lower-episode = \relative c {
   } >>
   << {
     ces'2 a
-    r4 \stemNeutral \tuplet 3/2 4 { bes8 c \cr f } <b, e g>4( <f' aes>)
+    r4 \stemNeutral \tuplet 3/2 4 { aes8 c \cr f } <b, e g>4( <f' aes>)
     \cl
   } \\ {
     bes,,1
@@ -399,7 +401,7 @@ lower-episode = \relative c {
 upper-bridge = \relative c'' {
   \tuplet 3/2 4 { r8 c des f4 a8 aes4 c,8 f e ees }
   \tuplet 3/2 4 { r8 c des f4 a8 f des ces } <c aes e>4
-  << { \tuplet 3/2 4 { r4 e'8 c4 aes8 } } \\ { <aes, f c>2 } >>
+  << { \tuplet 3/2 4 { r4 ees'8 c4 aes8 } } \\ { <aes, f c>2 } >>
   \tuplet 3/2 4 { \acciaccatura g'16 <bes des>4 f8 des4 ces8 }
   \tuplet 3/2 4 {
     <f bes,>8 ees des
@@ -435,14 +437,15 @@ upper-verse-four = \upper-verse-one-b
 lower-verse-three = \lower-verse-one-b
 lower-verse-four = \lower-verse-one-b
 upper-outro = \relative c' {
-  <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <g fes ces>
-  <ees bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees' aes>2
+  <f c>4 \tuplet 3/2 4 { c'8 des f } <fes ces>4~ <bes fes ces>
+  <ees, bes>4 \tuplet 3/2 4 { c8 des ees } <a, ees' aes>2
   \tuplet 3/2 4 { r8 g aes bes c des~ } <des aes fes>4 <c g ees>
+  \tuplet 3/2 4 { r8 g, c ees g c } g'2\fermata
 }
 
 lower-outro = \relative c {
   des2 des c f,,
-  bes2 ees aes1
+  bes2 ees aes1\fermata
 }
 
 upper = \relative c' {
@@ -463,7 +466,7 @@ upper = \relative c' {
   \upper-chorus-three-end
   \upper-verse-four
   \upper-outro
-  % \bar "|."
+  \bar "|."
 }
 
 lower = \relative c {
@@ -483,7 +486,7 @@ lower = \relative c {
   \lower-chorus-three-end
   \lower-verse-four
   \lower-outro
-  % \bar "|."
+  \bar "|."
 }
 
 pedals = {
