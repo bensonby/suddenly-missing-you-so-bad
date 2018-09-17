@@ -54,7 +54,7 @@ rit = \markup { \bold \italic "rit." }
 }
 
 melody-intro = \relative c {
-  R1
+  R1*3
 }
 
 melody-verse-one = \relative c' {
@@ -215,24 +215,39 @@ upper-intro = \relative c''' {
   << { 
     \tuplet 3/2 4 { r4 g8~ } g4
     \tuplet 3/2 4 { r4 f8~ f4 e8 }
+    ees2 \tuplet 3/2 4 { c4 bes8 aes4 g8 }
+    \tuplet 3/2 4 { r4 g'8~ } g4
+    \tuplet 3/2 4 { r4 f8~ f4 e8 }
     ees2 c4 bes
   } \\ {
-    aes2 aes aes4 \tuplet 3/2 4 { fis4 g8 } aes4 g
+    aes2 aes aes4
+    \tuplet 3/2 4 { g4 aes16 bes } g4 c,
+    aes'2 aes aes4
+    \tuplet 3/2 4 { fis4 g8 } aes4 g
   } >>
 }
 
 lower-intro = \relative c' {
   << {
     \override Glissando.style = #'dashed-line
-    \hideNotes d4\glissando \unHideNotes \cr \stemDown bes'\glissando \cl \stemUp
-    \hideNotes d,4\glissando \unHideNotes \cr \stemDown beses'\glissando \cl
-    \hideNotes f4
+    \hideNotes d4\glissando \unHideNotes \cr \stemDown bes'--\glissando \cl \stemUp
+    \hideNotes d,4\glissando \unHideNotes \cr \stemDown beses'--\glissando \cl
+    \hideNotes f4 s4 s2 \unHideNotes
+
+    \hideNotes d4\glissando \unHideNotes \cr \stemDown bes'--\glissando \cl \stemUp
+    \hideNotes d,4\glissando \unHideNotes \cr \stemDown beses'--\glissando \cl
+    \hideNotes c,4 \unHideNotes
+    % r4 \cr bes \cl r4 \cr beses
   } \\ {
     \stemDown
     c,2 des
-    <bes' f'>2 <ees, des'>
+    <bes' f'>2 <e, d'>
+    f2 d
+    <ees c'>2~ <ees des'>
   } \\ {
-    c'4\rest s4 c4\rest
+    c'4\rest s4 c4\rest s4
+    s1
+    c4\rest s4 c4\rest s4
   } >>
 }
 
